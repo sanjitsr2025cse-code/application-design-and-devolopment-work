@@ -1,0 +1,90 @@
+<html>
+<head>
+<title> ArtSpace Gallery </title>
+<style>
+body{
+background-color: lightgray;
+font-family: Arial;
+text-align: center;
+}
+
+figure{
+border:1px solid black;
+padding:10px;
+width:250px;
+margin:15px;
+display:inline-block;
+background:white;
+}
+
+img{
+width:230px;
+height:150px;
+}
+
+.like{
+background-color: blue;
+color:white;
+border:none;
+padding:5px;
+}
+
+.comment{
+margin-top:5px;
+}
+
+</style>
+</head>
+<body>
+
+<h1> ARTSPACE </h1>
+<p> Welcome to my simple art gallery </p>
+
+<figure>
+<img src="https://picsum.photos/id/1025/300/200">
+<figcaption> Beautiful Bird </figcaption>
+<p> Likes: <span id="like1">0</span> </p>
+<button class="like" onclick="like1()">Like</button><br><br>
+<input type="text" id="cmt1" placeholder="write comment">
+<button onclick="comment1()">Post</button>
+<div id="comments1" class="comment"></div>
+</figure>
+
+<figure>
+<img src="https://picsum.photos/id/1018/300/200">
+<figcaption> Mountain Scene </figcaption>
+<p> Likes: <span id="like2">0</span> </p>
+<button class="like" onclick="like2()">Like</button><br><br>
+<input type="text" id="cmt2" placeholder="write comment">
+<button onclick="comment2()">Post</button>
+<div id="comments2" class="comment"></div>
+</figure>
+
+<script>
+var a=0
+function like1(){
+a=a+1
+document.getElementById("like1").innerHTML=a
+}
+
+var b=0
+function like2(){
+b=b+1
+document.getElementById("like2").innerHTML=b
+}
+
+function comment1(){
+var text=document.getElementById("cmt1").value
+document.getElementById("comments1").innerHTML += "<p>"+text+"</p>"
+document.getElementById("cmt1").value=""
+}
+
+function comment2(){
+var text=document.getElementById("cmt2").value
+document.getElementById("comments2").innerHTML += "<p>"+text+"</p>"
+document.getElementById("cmt2").value=""
+}
+</script>
+
+</body>
+</html>
